@@ -1,0 +1,5 @@
+flask==2.2.3
+python-dotenv==1.0.0
+solana==0.20.1
+torch==2.0.1
+transformers==4.32.0
