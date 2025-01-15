@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: singularx-ai
+  labels:
+    app: singularx-ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: singularx-ai
+  template:
+    metadata:
+      labels:
+        app: singularx-ai
+    spec:
+      containers:
+      - name: singularx-ai
+        image: your-dockerhub-username/singularx-ai:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: SOLANA_RPC_URL
+          value: "https://api.mainnet-beta.solana.com"
+        - name: AI_MODEL_PATH
+          value: "/models/singularx_model.pt"
